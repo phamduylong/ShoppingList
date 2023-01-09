@@ -1,6 +1,5 @@
 <script>
-
-	import AddForm from "../components/AddForm.svelte";
+	import AddForm from '../components/AddForm.svelte';
 
 	let item = '',
 		note = '',
@@ -36,31 +35,25 @@
 
 <title>Shopping List 🛒</title>
 
-<div id="page">
-	<AddForm bind:item={item} bind:quantity={quantity} bind:note={note} on:submit={addTodo} />
-	<div id="shopping_list">
-		<h2><b>Shopping List</b></h2>
-		{#each shopping_list as item, idx}
-			{#if item.note === ''}
-				<div class="item-container">
-					{item.title} x {item.quantity}<br />
-					<button on:click={() => removeCompleted(idx)}><i class="fa fa-trash" /></button>
-				</div>
-			{:else}
-				<div class="item-container">
-					{item.title} x {item.quantity}<br /><strong>Note: </strong>{item.note}<br />
-					<button on:click={() => removeCompleted(idx)}><i class="fa fa-trash" /></button>
-				</div>
-			{/if}
-		{/each}
-	</div>
+<AddForm bind:item bind:quantity bind:note on:submit={addTodo} />
+<div id="shopping_list">
+	<h2><b>Shopping List</b></h2>
+	{#each shopping_list as item, idx}
+		{#if item.note === ''}
+			<div class="item-container">
+				{item.title} x {item.quantity}<br />
+				<button on:click={() => removeCompleted(idx)}><i class="fa fa-trash" /></button>
+			</div>
+		{:else}
+			<div class="item-container">
+				{item.title} x {item.quantity}<br /><strong>Note: </strong>{item.note}<br />
+				<button on:click={() => removeCompleted(idx)}><i class="fa fa-trash" /></button>
+			</div>
+		{/if}
+	{/each}
 </div>
 
 <style>
-	#page {
-		margin: 0 auto;
-	}
-
 	h2 {
 		position: relative;
 		left: 50%;
