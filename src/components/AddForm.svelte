@@ -11,8 +11,9 @@
 />
 
 
+	
 <form on:submit|preventDefault>
-	<h2><b>Add New Item</b></h2>
+    <h2><b>Add New Item</b></h2>
 	<label for="item">Item:</label>
 	<input type="text" name="item" placeholder="Item" required bind:value={item} />
 	<label for="quantity">Quantity:</label><br />
@@ -32,10 +33,11 @@
 
 <style>
 	h2 {
-		position: relative;
+		position: absolute;
 		left: 50%;
-		top: 2%;
+		top: -10%;
 		transform: translate(-50%, -50%);
+        margin-bottom: 20px;
 	}
 
 	form {
