@@ -1,7 +1,20 @@
 <script>
-	export let item = '',
+	import { createEventDispatcher } from "svelte";
+	let dispatch = createEventDispatcher();
+	let item = '',
 		note = '',
 		quantity = 1;
+
+	function emitAddItem() {
+		const new_item = {
+			item, quantity, note
+		}
+
+		dispatch('additem', new_item);
+		item = '';
+		note = '';
+		quantity = 1;
+	}
 </script>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -12,7 +25,7 @@
 
 
 	
-<form on:submit|preventDefault>
+<form on:submit|preventDefault={emitAddItem}>
     <h2><b>Add New Item</b></h2>
 	<label for="item">Item:</label>
 	<input type="text" name="item" placeholder="Item" required bind:value={item} />
