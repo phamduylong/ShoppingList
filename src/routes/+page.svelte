@@ -1,36 +1,33 @@
 <script>
+	import { onMount } from 'svelte';
 	import AddForm from '../components/AddForm.svelte';
 	import ShoppingList from '../components/ShoppingList.svelte';
 
-	let shopping_list = [
-		{ item: 'kanamunia', quantity: 10, note: 'Kplussa vain' },
-		{ item: 'filetpihvi', quantity: 2, note: '' },
-		{ item: 'juusto', quantity: 1, note: '' },
-		{ item: 'Voi', quantity: 2, note: '' }
-	];
+	let shopping_list = [];
 
-	function addTodo(e) {
-		//assign to overwrite value
-		shopping_list = [...shopping_list, e.detail];
+	onMount(() => {
+		shopping_list = JSON.parse(localStorage.getItem("shopping_list"));
+	})
+
+	function addItem(e) {
+		const new_item = e.detail;
+		shopping_list = [...shopping_list, new_item];
+		localStorage.setItem("shopping_list", JSON.stringify(shopping_list));
 	}
 
 	function removeCompleted(e) {
-		shopping_list.splice(e.detail, 1);
+		const del_index = e.detail
+		shopping_list.splice(del_index, 1);
 		shopping_list = shopping_list;
+		localStorage.setItem("shopping_list", JSON.stringify(shopping_list));
 	}
 </script>
-
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-<link
-	rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
 
 <title>Shopping List 🛒</title>
 
 <div id="wrapper">
 	<ShoppingList {shopping_list} on:deleteitem={(e) => removeCompleted(e)}/>
-	<AddForm on:additem={(e) => addTodo(e)} />
+	<AddForm on:additem={(e) => addItem(e)} />
 </div>
 <style>
 	#wrapper {
