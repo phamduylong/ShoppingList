@@ -28,9 +28,12 @@
 
 <title>Shopping List 🛒</title>
 
-<AddForm on:additem={(e) => addTodo(e)} />
-<ShoppingList {shopping_list} on:deleteitem={(e) => removeCompleted(e)}/>
-
+<div id="wrapper">
+	<ShoppingList {shopping_list} on:deleteitem={(e) => removeCompleted(e)}/>
+	<AddForm on:additem={(e) => addTodo(e)} />
+</div>
 <style>
-
+	#wrapper {
+		font-family: "Courier New", sans-serif;
+	}
 </style>

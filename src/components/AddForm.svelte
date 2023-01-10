@@ -51,6 +51,7 @@
 		top: -10%;
 		transform: translate(-50%, -50%);
         margin-bottom: 20px;
+		font-family: "Courier New", sans-serif;
 	}
 
 	form {
