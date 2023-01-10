@@ -14,8 +14,8 @@
 		shopping_list = [...shopping_list, e.detail];
 	}
 
-	function removeCompleted(index) {
-		shopping_list.splice(index, 1);
+	function removeCompleted(e) {
+		shopping_list.splice(e.detail, 1);
 		shopping_list = shopping_list;
 	}
 </script>
@@ -29,7 +29,7 @@
 <title>Shopping List 🛒</title>
 
 <AddForm on:additem={(e) => addTodo(e)} />
-<ShoppingList {shopping_list} />
+<ShoppingList {shopping_list} on:deleteitem={(e) => removeCompleted(e)}/>
 
 <style>
 
