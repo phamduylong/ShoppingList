@@ -4,6 +4,7 @@
 	let item = '',
 		note = '',
 		quantity = 1;
+	$: valid = item !== "" && item !== undefined && !isNaN(quantity) && quantity > 0;
 
 	function emitAddItem() {
 		const new_item = {
@@ -27,9 +28,9 @@
 	
 <form on:submit|preventDefault={emitAddItem}>
     <h2><b>Add New Item</b></h2>
-	<label for="item">Item:</label>
+	<label for="item" class="required">Item</label>
 	<input type="text" name="item" placeholder="Item" required bind:value={item} />
-	<label for="quantity">Quantity:</label><br />
+	<label for="quantity" class="required">Quantity</label><br />
 	<input
 		type="number"
 		name="quantity"
@@ -39,9 +40,9 @@
 		required
 		bind:value={quantity}
 	/>
-	<label for="note">Note:</label>
+	<label for="note">Note</label>
 	<input type="text" name="note" placeholder="Note for this item" bind:value={note} />
-	<input type="submit" value="Add Item" />
+	<button type="submit" disabled={!valid}>Add Item</button>
 </form>
 
 <style>
@@ -70,6 +71,11 @@
 		max-height: 50%;
 	}
 
+	.required:after {
+		content:"*";
+		color: red;
+  	}
+
 	input {
 		border-top: none;
 		border-right: none;
@@ -83,7 +89,7 @@
 		outline: none;
 	}
 
-	input[type='submit'] {
+	button[type='submit'] {
 		max-width: 60%;
 		max-height: 20%;
 		border: 1px solid;
