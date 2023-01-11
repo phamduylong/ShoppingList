@@ -34,7 +34,8 @@
 	button {
 		position: absolute;
 		top: 50%;
-		right: 1%;
+		right: 0.5%;
+		transform: translate(-50%, -50%);
 		background-color: orange;
 		border: none;
 		margin-left: auto;
