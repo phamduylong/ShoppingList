@@ -51,7 +51,7 @@
 		left: 50%;
 		top: -15%;
 		transform: translate(-50%, -50%);
-        margin-bottom: 2vw;
+        margin-bottom: 3vw;
 		font-family: "Courier New", sans-serif;
 		font-size: 2vw;
 	}
@@ -84,17 +84,18 @@
 		margin-bottom: 0.9vw;
 		padding: 0 0.45vw;
 		height: 3.6vw;
-		font-size: 1.5vw;
+		font-size: 2vw;
 		background: none;
 		outline: none;
 	}
 
 	button[type='submit'] {
+		font-size: 2.5vw;
 		max-width: 60%;
 		max-height: 20%;
 		border: 1px solid;
 		border-radius: 25px;
-		font-size: 1.5vw;
+		font-size: 2vw;
 		background-color: white;
 		font-weight: 700;
 		cursor: pointer;

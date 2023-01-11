@@ -29,6 +29,7 @@
 		border: black solid 1.5px;
 		margin: 5px;
 		padding: 1em;
+		font-size: 1.5vw;
 	}
 
 	button {
