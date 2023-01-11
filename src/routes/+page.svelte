@@ -25,6 +25,8 @@
 
 <title>Shopping List 🛒</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <div id="wrapper">
 	<ShoppingList {shopping_list} on:deleteitem={(e) => removeCompleted(e)}/>
 	<AddForm on:additem={(e) => addItem(e)} />
