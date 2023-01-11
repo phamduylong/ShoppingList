@@ -1,4 +1,5 @@
 <script>
+	import { fade, fly } from 'svelte/transition';
 	export let item = { item: '', quantity: 1, note: '' };
 </script>
 
@@ -12,7 +13,7 @@
 
 
 
-<div class="item-container">
+<div class="item-container" in:fly="{{ y: -200, duration: 750}}" out:fade>
 	{item.item} x {item.quantity}<br />
 	{#if item.note !== ''}<strong>Note: </strong>{item.note}<br />{/if}
 	<button on:click><i class="fa fa-trash" /></button>
