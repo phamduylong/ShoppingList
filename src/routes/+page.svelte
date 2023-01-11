@@ -32,5 +32,6 @@
 <style>
 	#wrapper {
 		font-family: "Courier New", sans-serif;
+		background-color: antiquewhite;
 	}
 </style>
