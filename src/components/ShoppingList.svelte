@@ -24,6 +24,7 @@
 		top: 2%;
 		transform: translate(-50%, -50%);
 		font-family: "Courier New", sans-serif;
+		font-size: 2vw;
 	}
 
 
