@@ -48,7 +48,7 @@
 	h2 {
 		position: absolute;
 		left: 50%;
-		top: -10%;
+		top: -15%;
 		transform: translate(-50%, -50%);
         margin-bottom: 2vw;
 		font-family: "Courier New", sans-serif;
