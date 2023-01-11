@@ -33,10 +33,9 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		background-color: cadetblue;
-		margin: 1.85vw;
 		padding: 0.5%;
 		max-height: 40%;
-		max-lines: 3;
+		width: 100%;
 		overflow: scroll;
 		position: absolute;
 		top: 2%;
