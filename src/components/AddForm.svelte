@@ -49,7 +49,7 @@
 	h2 {
 		position: absolute;
 		left: 50%;
-		top: -15%;
+		top: -20%;
 		transform: translate(-50%, -50%);
         margin-bottom: 3vw;
 		font-family: "Courier New", sans-serif;
@@ -61,18 +61,16 @@
 		top: 70%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		background-color: orange;
-		border-radius: 0.9vw;
 		padding: 0 5vw;
 		box-sizing: border-box;
 		margin-top: 5%;
 		margin-bottom: 5%;
 		max-width: 50%;
-		max-height: 50%;
+		max-height: 20%;
 	}
 
 	label {
-		font-size: 2vw;
+		font-size: 1.5vw;
 	}
 
 	.required:after {
@@ -85,18 +83,18 @@
 		border-right: none;
 		border-left: none;
 		width: 100%;
+		height: 25%;
 		margin-bottom: 0.9vw;
 		padding: 0 0.45vw;
 		height: 3.6vw;
-		font-size: 2vw;
 		background: none;
 		outline: none;
 	}
 
 	button[type='submit'] {
 		font-size: 2.5vw;
-		max-width: 60%;
-		max-height: 20%;
+		width: 60%;
+		height: 20%;
 		border: 1px solid black;
 		border-radius: 25px;
 		font-size: 2vw;
