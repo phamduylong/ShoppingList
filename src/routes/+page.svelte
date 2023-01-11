@@ -6,7 +6,7 @@
 	let shopping_list = [];
 
 	onMount(() => {
-		if (typeof localStorage !== undefined) shopping_list = JSON.parse(localStorage.getItem("shopping_list"));
+		if (typeof localStorage !== undefined) shopping_list = JSON.parse(localStorage.getItem("shopping_list")) || [];
 	})
 
 	function addItem(e) {
