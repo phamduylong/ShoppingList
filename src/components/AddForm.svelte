@@ -57,7 +57,7 @@
 
 	form {
 		position: absolute;
-		top: 60%;
+		top: 70%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		background-color: orange;
@@ -66,6 +66,8 @@
 		box-sizing: border-box;
 		margin-top: 5%;
 		margin-bottom: 5%;
+		max-width: 50%;
+		max-height: 35%;
 	}
 
 	input {

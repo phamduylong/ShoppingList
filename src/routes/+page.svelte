@@ -34,7 +34,7 @@
 </body>
 
 <style>
-	:global(label, input) {
+	:global(label, input[type="text"], input[type="number"]) {
 		font-size: 1vw;
 	}
 	
