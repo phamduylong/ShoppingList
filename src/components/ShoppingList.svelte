@@ -38,9 +38,10 @@
 		margin-right: 20px;
 		margin-bottom: 20px;
 		padding: 0.5%;
-		max-height: 50%;
+		max-height: 40%;
 		max-lines: 3;
 		overflow: scroll;
 		position: absolute;
+		top: 2%;
 	}
 </style>

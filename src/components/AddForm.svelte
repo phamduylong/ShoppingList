@@ -85,10 +85,10 @@
 
 	input[type='submit'] {
 		width: 100%;
-		height: 20%;
+		max-height: 20%;
 		border: 1px solid;
 		border-radius: 25px;
-		font-size: 20px;
+		font-size: 1.5vw;
 		background-color: white;
 		font-weight: 700;
 		cursor: pointer;
