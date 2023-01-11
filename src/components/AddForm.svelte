@@ -50,7 +50,7 @@
 		left: 50%;
 		top: -10%;
 		transform: translate(-50%, -50%);
-        margin-bottom: 20px;
+        margin-bottom: 2vw;
 		font-family: "Courier New", sans-serif;
 		font-size: 2vw;
 	}
@@ -61,13 +61,13 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		background-color: orange;
-		border-radius: 10px;
-		padding: 0 60px;
+		border-radius: 0.9vw;
+		padding: 0 5vw;
 		box-sizing: border-box;
 		margin-top: 5%;
 		margin-bottom: 5%;
 		max-width: 50%;
-		max-height: 35%;
+		max-height: 50%;
 	}
 
 	input {
@@ -75,16 +75,16 @@
 		border-right: none;
 		border-left: none;
 		width: 100%;
-		margin-bottom: 10px;
-		padding: 0 5px;
-		height: 40px;
-		font-size: 16px;
+		margin-bottom: 0.9vw;
+		padding: 0 0.45vw;
+		height: 3.6vw;
+		font-size: 1.5vw;
 		background: none;
 		outline: none;
 	}
 
 	input[type='submit'] {
-		width: 100%;
+		max-width: 60%;
 		max-height: 20%;
 		border: 1px solid;
 		border-radius: 25px;
@@ -93,7 +93,10 @@
 		font-weight: 700;
 		cursor: pointer;
 		outline: none;
-		margin-top: 30px;
-		margin-bottom: 30px;
+		margin-top: 3vw;
+		margin-bottom: 3vw;
+		position: relative;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 </style>

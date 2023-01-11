@@ -33,10 +33,7 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		background-color: cadetblue;
-		margin-top: 20px;
-		margin-left: 20px;
-		margin-right: 20px;
-		margin-bottom: 20px;
+		margin: 1.85vw;
 		padding: 0.5%;
 		max-height: 40%;
 		max-lines: 3;
