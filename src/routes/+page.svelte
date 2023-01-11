@@ -36,4 +36,8 @@
 		font-family: "Courier New", sans-serif;
 		background-color: antiquewhite;
 	}
+
+	:global(body) {
+		font-size: 10vw;
+	}
 </style>
