@@ -71,6 +71,10 @@
 		max-height: 50%;
 	}
 
+	label {
+		font-size: 2vw;
+	}
+
 	.required:after {
 		content:"*";
 		color: red;
@@ -93,7 +97,7 @@
 		font-size: 2.5vw;
 		max-width: 60%;
 		max-height: 20%;
-		border: 1px solid;
+		border: 1px solid black;
 		border-radius: 25px;
 		font-size: 2vw;
 		background-color: white;
@@ -101,7 +105,7 @@
 		cursor: pointer;
 		outline: none;
 		margin-top: 3vw;
-		margin-bottom: 3vw;
+		margin-bottom: 2vw;
 		position: relative;
 		left: 50%;
 		transform: translate(-50%, -50%);
