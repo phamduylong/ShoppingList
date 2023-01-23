@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import AddForm from '../components/AddForm.svelte';
 	import ShoppingList from '../components/ShoppingList.svelte';
-	import { MetaTags } from 'svelte-meta-tags';
 	import SvelteSeo from "svelte-seo";
 	let shopping_list = [];
 
@@ -43,22 +42,7 @@
 	}}
 />
 
-<MetaTags 
-	openGraph={{
-		type: 'website',
-		url: 'https://longph.com',
-		title: 'Long Pham\'s Personal Website',
-		description: 'Long Pham\'s personal website/portfolio written in Svelte and SvelteKit',
-		images: [
-			{
-				url: 'https://picsum.photos/400/300',
-				width: 400,
-				height: 300,
-				alt: ''
-			}
-		]
-	}}
-/>
+
 
 <title>Shopping List 🛒</title>
 
