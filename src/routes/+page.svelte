@@ -3,6 +3,7 @@
 	import AddForm from '../components/AddForm.svelte';
 	import ShoppingList from '../components/ShoppingList.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
+	import SvelteSeo from "svelte-seo";
 	let shopping_list = [];
 
 	onMount(() => {
@@ -24,7 +25,23 @@
 	}
 </script>
 
+<SvelteSeo 
+	openGraph={{
+		title: "Shopping List",
+		description: "A To-Buy List Webpage",
+		type: "website",
+		url: "https://shopping-list-pi-three.vercel.app",
+		images: [
+			{
+				url: 'https://picsum.photos/400/300',
+				width: 400,
+				height: 300,
+				alt: ''
+			}
+		]
 
+	}}
+/>
 
 <MetaTags 
 	openGraph={{
