@@ -31,6 +31,7 @@
 		border-radius: 5px;
 		border: black solid 1.5px;
 		padding: 0.5em;
+		margin: 0.5%;
 		
 	}
 
