@@ -14,8 +14,10 @@
 
 
 <div class="item-container" in:fly="{{ y: -200, duration: 750}}" out:fade>
-	{item.item} x {item.quantity}<br />
-	{#if item.note !== ''}<strong>Note: </strong>{item.note}<br />{/if}
+	<div class="item-content">	{item.item} x {item.quantity}<br />
+		{#if item.note !== ''}<strong>Note: </strong>{item.note}<br />{/if}
+	</div>
+
 	<button on:click><i class="fa fa-trash" /></button>
 </div>
 
@@ -28,8 +30,15 @@
 		background-color: orange;
 		border-radius: 5px;
 		border: black solid 1.5px;
-		margin: 5px;
-		padding: 1em;
+		padding: 0.5em;
+		
+	}
+
+	.item-content {
+		word-wrap: break-word;
+		height: 100%;
+		width: 95%;
+		margin:1%;
 		font-size: 1.5vw;
 	}
 
@@ -40,6 +49,6 @@
 		transform: translate(-50%, -50%);
 		background-color: orange;
 		border: none;
-		margin-left: auto;
+		margin-left: 2%;
 	}
 </style>
