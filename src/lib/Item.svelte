@@ -26,7 +26,7 @@
 		position: relative;
 		display: inline-block;
 		height: 2%;
-		width: 100%;
+		width: 99%;
 		background-color: orange;
 		border-radius: 5px;
 		border: black solid 1.5px;
