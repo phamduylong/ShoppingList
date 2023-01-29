@@ -14,7 +14,7 @@
 <div id="wrapper">
 	<div id="shopping_list">
 		{#if shopping_list.length === 0}
-			<h1>Empty list 😥 Wanna buy something?</h1>
+			<h1>Empty list 😥 Add some items 👇</h1>
 		{:else}
 			{#each shopping_list as item, index}
 				<Item {item} on:click={() => emitDeleteItem(index)} />
@@ -29,6 +29,8 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		width: 100%;
+		text-align: center;
 	}
 
 	#wrapper {
