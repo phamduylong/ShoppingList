@@ -1,43 +1,67 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher } from 'svelte';
 	import Item from './Item.svelte';
-    let dispatch = createEventDispatcher();
+	let dispatch = createEventDispatcher();
 
-    export let shopping_list = [];
+	export let shopping_list = [];
 
-    function emitDeleteItem(index) {
-        dispatch('deleteitem', index);
-    }
+	function emitDeleteItem(index) {
+		dispatch('deleteitem', index);
+	}
 </script>
 
-<div id="shopping_list">
-	<h2><b>Shopping List</b></h2>
-	{#each shopping_list as item, index}
-		<Item {item} on:click={() => emitDeleteItem(index)}/>
-	{/each}
+<h2><b>Shopping List 🛒</b></h2>
+<div id="wrapper">
+	<div id="shopping_list">
+		{#if shopping_list.length === 0}
+			<h1>Empty list 😥 Wanna buy something?</h1>
+		{:else}
+			{#each shopping_list as item, index}
+				<Item {item} on:click={() => emitDeleteItem(index)} />
+			{/each}
+		{/if}
+	</div>	
 </div>
 
 <style>
-	h2 {
-		position: relative;
+	h1 {
+		position: absolute;
+		top: 50%;
 		left: 50%;
-		top: 2%;
 		transform: translate(-50%, -50%);
-		font-family: "Courier New", sans-serif;
-		font-size: 3vw;
 	}
 
+	#wrapper {
+		background-color: cadetblue;
+		padding: 1.5%;
+		height: 40%;
+		width: 90%;
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		border-radius: 2vh;
+		transform: translate(-50%, -50%);
+		overscroll-behavior: contain;
+	}
+	
+
+	h2 {
+		position: absolute;
+		left: 50%;
+		top: 5%;
+		transform: translate(-50%, -50%);
+		font-family: 'Courier New', sans-serif;
+		font-size: 3vw;
+		margin-bottom: 5%;
+	}
 
 	#shopping_list {
+		background-color: cadetblue;
+		max-height: 102%;
+		width: 100%;
+		overflow-y:scroll;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		background-color: cadetblue;
-		padding: 1.5%;
-		max-height: 40%;
-		width: 100%;
-		overflow: scroll;
-		position: absolute;
-		top: 2%;
 	}
 </style>
