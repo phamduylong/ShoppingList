@@ -31,9 +31,11 @@
 		transform: translate(-50%, -50%);
 		width: 100%;
 		text-align: center;
+		font-size: 4vw;
 	}
 
 	#wrapper {
+		margin-top: 5%;
 		background-color: cadetblue;
 		padding: 1.5%;
 		height: 40%;
@@ -61,7 +63,7 @@
 		background-color: cadetblue;
 		max-height: 102%;
 		width: 100%;
-		overflow-y:scroll;
+		overflow-y: auto;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
