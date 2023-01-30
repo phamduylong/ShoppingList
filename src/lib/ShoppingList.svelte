@@ -2,11 +2,14 @@
 	import { createEventDispatcher } from 'svelte';
 	import Item from './Item.svelte';
 	let dispatch = createEventDispatcher();
+	import { openModal } from 'svelte-modals';
+ 	import Modal from './Modal.svelte';
 
 	export let shopping_list = [];
 
 	function emitDeleteItem(index) {
-		dispatch('deleteitem', index);
+		openModal(Modal, { title: "Alert", message: `Are you sure you want to delete "${shopping_list[index].item}"`});
+		//dispatch('deleteitem', index);
 	}
 </script>
 
@@ -22,6 +25,8 @@
 		{/if}
 	</div>	
 </div>
+
+
 
 <style>
 	h1 {
