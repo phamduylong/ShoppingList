@@ -1,9 +1,15 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	import { modalResult, modalOpen } from './stores';
+	import { modalOpen } from './stores';
 	export let title;
 	export let message;
 	const dispatch = createEventDispatcher();
+
+	function acceptModal() {
+		dispatch('modalconfirmed');
+		modalOpen.close();
+	}
+
 </script>
 
 {#if $modalOpen}
@@ -12,12 +18,7 @@
 			<h2>{title}</h2>
 			<p>{message}</p>
 			<div class="actions">
-				<button
-					on:click={() => {
-						dispatch('modalconfirmed');
-						modalOpen.close();
-					}}>Yes</button
-				>
+				<button on:click={acceptModal}>Yes</button>
 				<button
 					on:click={() => {
 						modalOpen.close();
