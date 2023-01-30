@@ -2,17 +2,15 @@
 	import { createEventDispatcher } from 'svelte';
 	import Item from './Item.svelte';
 	let dispatch = createEventDispatcher();
-	import { openModal } from 'svelte-modals';
- 	import Modal from './Modal.svelte';
-	import { modalResult } from './stores.js';
+	import Modal from './Modal.svelte';
+	import { modalOpen } from './stores';
 	export let shopping_list = [];
+	let deleteIndex = 0;
 
-	function emitDeleteItem(index) {
-		openModal(Modal, { title: "Alert", message: `Are you sure you want to delete "${shopping_list[index].item}"`});
-		if($modalResult === true) {
-			dispatch('deleteitem', index);
-			modalResult.setFalse();
-		}
+
+	function openModal(index) {
+		deleteIndex = index
+		modalOpen.open();
 	}
 </script>
 
@@ -23,13 +21,13 @@
 			<h1>Empty list 😥 Add some items 👇</h1>
 		{:else}
 			{#each shopping_list as item, index}
-				<Item {item} on:click={() => emitDeleteItem(index)} />
+				<Item {item} on:click={() => openModal(index)} />
+				
 			{/each}
+			<Modal title="Alert!" message={`You are deleting item "${shopping_list[deleteIndex].item}". Are you sure?`} on:modalconfirmed={() => {dispatch('deleteitem', deleteIndex); deleteIndex = 0;}}/>
 		{/if}
-	</div>	
+	</div>
 </div>
-
-
 
 <style>
 	h1 {
@@ -55,7 +53,6 @@
 		transform: translate(-50%, -50%);
 		overscroll-behavior: contain;
 	}
-	
 
 	h2 {
 		position: absolute;
