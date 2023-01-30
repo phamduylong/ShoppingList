@@ -3,7 +3,7 @@
 	import { modalResult, modalOpen } from './stores';
 	export let title;
 	export let message;
-  const dispatch = createEventDispatcher();
+	const dispatch = createEventDispatcher();
 </script>
 
 {#if $modalOpen}
@@ -14,7 +14,7 @@
 			<div class="actions">
 				<button
 					on:click={() => {
-            			dispatch('modalconfirmed');
+						dispatch('modalconfirmed');
 						modalOpen.close();
 					}}>Yes</button
 				>
@@ -68,5 +68,14 @@
 		margin-top: 32px;
 		display: flex;
 		justify-content: space-between;
+	}
+
+	button {
+		box-shadow: 0px 8px 15px rgba(100, 100, 100, 0.1);
+		padding: 4px;
+	}
+
+	button:hover {
+		transform: translateY(-7px);
 	}
 </style>
