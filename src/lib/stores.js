@@ -10,4 +10,15 @@ function createModalResult() {
     }
 }
 
-export const modalResult = createModalResult();
+function createModal() {
+    const {subscribe, set} = writable(false);
+
+    return {
+        subscribe,
+        open: () => set(true),
+        close: () => set(false)
+    }
+}
+const modalResult = createModalResult();
+const modalOpen = createModal();
+export {modalResult, modalOpen};
