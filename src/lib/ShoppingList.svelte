@@ -4,12 +4,15 @@
 	let dispatch = createEventDispatcher();
 	import { openModal } from 'svelte-modals';
  	import Modal from './Modal.svelte';
-
+	import { modalResult } from './stores.js';
 	export let shopping_list = [];
 
 	function emitDeleteItem(index) {
 		openModal(Modal, { title: "Alert", message: `Are you sure you want to delete "${shopping_list[index].item}"`});
-		//dispatch('deleteitem', index);
+		if($modalResult === true) {
+			dispatch('deleteitem', index);
+			modalResult.setFalse();
+		}
 	}
 </script>
 
