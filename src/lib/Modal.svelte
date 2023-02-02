@@ -9,7 +9,6 @@
 		dispatch('modalconfirmed');
 		modalOpen.close();
 	}
-
 </script>
 
 {#if $modalOpen}
@@ -45,11 +44,12 @@
 	}
 
 	.contents {
-		min-width: 240px;
+		min-width: 60%;
 		border-radius: 6px;
-		padding: 16px;
+		padding: 8px;
 		background: white;
 		display: flex;
+		flex-wrap: nowrap;
 		flex-direction: column;
 		justify-content: space-between;
 		pointer-events: auto;
@@ -57,26 +57,64 @@
 
 	h2 {
 		text-align: center;
-		font-size: 24px;
+		font-size: 12px;
 	}
 
 	p {
 		text-align: center;
-		margin-top: 16px;
+		margin-top: 8px;
 	}
 
 	.actions {
-		margin-top: 32px;
+		margin-top: 20px;
 		display: flex;
 		justify-content: space-between;
 	}
 
 	button {
-		box-shadow: 0px 8px 15px rgba(100, 100, 100, 0.1);
-		padding: 4px;
+		box-shadow: 0px 4px 8px rgba(100, 100, 100, 0.1);
+		padding: 2px;
 	}
 
 	button:hover {
-		transform: translateY(-7px);
+		transform: translateY(-0.5px);
+	}
+
+	@media only screen and (min-width: 768px) {
+		.contents {
+			min-width: 360px;
+			border-radius: 6px;
+			padding: 16px;
+			background: white;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			pointer-events: auto;
+		}
+
+		h2 {
+			text-align: center;
+			font-size: 16px;
+		}
+
+		p {
+			text-align: center;
+			margin-top: 12px;
+		}
+
+		.actions {
+			margin-top: 32px;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		button {
+			box-shadow: 0px 8px 15px rgba(100, 100, 100, 0.1);
+			padding: 4px;
+		}
+
+		button:hover {
+			transform: translateY(-7px);
+		}
 	}
 </style>
