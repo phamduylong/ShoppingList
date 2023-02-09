@@ -91,6 +91,11 @@
 		outline: none;
 	}
 
+	input:focus {
+		box-shadow: none;
+		border-bottom: 1px solid cadetblue;
+	}
+
 	button[type='submit'] {
 		font-size: 2.5vw;
 		width: 60%;
