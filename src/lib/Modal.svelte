@@ -23,6 +23,11 @@
 						modalOpen.close();
 					}}>No</button
 				>
+				<button
+					on:click={() => {
+						modalOpen.close();
+					}}>Cancel</button
+				>
 			</div>
 		</div>
 	</div>
@@ -39,8 +44,6 @@
 		justify-content: center;
 		align-items: center;
 		z-index: 10;
-		/* allow click-through to backdrop */
-		pointer-events: none;
 	}
 
 	.contents {
@@ -76,11 +79,7 @@
 		padding: 2px;
 	}
 
-	button:hover {
-		transform: translateY(-0.5px);
-	}
-
-	@media only screen and (min-width: 768px) {
+	@media only screen and (min-width: 960px) {
 		.contents {
 			min-width: 360px;
 			border-radius: 6px;
