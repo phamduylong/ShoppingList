@@ -40,7 +40,7 @@
 		height: 100%;
 		width: 95%;
 		margin:1%;
-		font-size: 1.5vw;
+		font-size: 2vw;
 	}
 
 	button {
