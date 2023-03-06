@@ -66,7 +66,7 @@
 
 	#shopping_list {
 		background-color: cadetblue;
-		max-height: 102%;
+		max-height: 100%;
 		width: 100%;
 		overflow-y: auto;
 		display: flex;
