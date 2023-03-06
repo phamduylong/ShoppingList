@@ -49,7 +49,7 @@
 	h2 {
 		position: absolute;
 		left: 50%;
-		top: -20%;
+		top: -25%;
 		transform: translate(-50%, -50%);
         margin-bottom: 3vw;
 		font-family: "Courier New", sans-serif;
@@ -70,7 +70,7 @@
 	}
 
 	label {
-		font-size: 1.5vw;
+		font-size: 2.5vw;
 	}
 
 	.required:after {
@@ -89,6 +89,7 @@
 		height: 3.6vw;
 		background: none;
 		outline: none;
+		font-size: 1.75vw !important;
 	}
 
 	input:focus {
