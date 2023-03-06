@@ -72,5 +72,6 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
+		border-radius: 2vh;
 	}
 </style>
