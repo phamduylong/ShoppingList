@@ -70,7 +70,7 @@
 	}
 
 	label {
-		font-size: 2.5vw;
+		font-size: 1.5vw;
 	}
 
 	.required:after {
@@ -89,7 +89,7 @@
 		height: 3.6vw;
 		background: none;
 		outline: none;
-		font-size: 1.75vw !important;
+		font-size: 1.25vw !important;
 	}
 
 	input:focus {
@@ -113,5 +113,15 @@
 		position: relative;
 		left: 50%;
 		transform: translate(-50%, -50%);
+	}
+
+	@media only screen and (orientation: portrait) and (max-width: 600px) {
+
+		label {
+			font-size: 2vw;
+		}
+		input {
+			font-size: 1.75 !important;
+		}
 	}
 </style>
