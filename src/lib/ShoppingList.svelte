@@ -8,7 +8,7 @@
 	let deleteIndex = 0;
 
 	function openModal(index) {
-		deleteIndex = index
+		deleteIndex = index;
 		modalOpen.open();
 	}
 </script>
@@ -21,13 +21,20 @@
 		{:else}
 			{#each shopping_list as item, index}
 				<Item {item} on:click={() => openModal(index)} />
-				
 			{/each}
-			
 		{/if}
 	</div>
 </div>
-<Modal title="Alert!" message={`You are deleting item "${shopping_list[deleteIndex] ? shopping_list[deleteIndex].item : ""}". Are you sure?`} on:modalconfirmed={() => {console.log(shopping_list[deleteIndex]); dispatch('deleteitem', deleteIndex); deleteIndex = 0;}}/>
+<Modal
+	title="Alert!"
+	message={`You are deleting item "${
+		shopping_list[deleteIndex] ? shopping_list[deleteIndex].item : ''
+	}". Are you sure?`}
+	on:modalconfirmed={() => {
+		dispatch('deleteitem', deleteIndex);
+		deleteIndex = 0;
+	}}
+/>
 
 <style>
 	h1 {
