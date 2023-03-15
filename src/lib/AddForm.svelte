@@ -29,22 +29,13 @@
 <form on:submit|preventDefault={emitAddItem}>
 	<h2><b>Add New Item</b></h2>
 	<label for="item" class="required">Item</label>
-	<input type="text" name="item" placeholder="Item" required bind:value={item} />
+	<input type="text" name="item" placeholder="Item" required value={item} />
 	<label for="quantity" class="required">Quantity</label><br />
-	<input
-		type="number"
-		name="quantity"
-		placeholder="1"
-		min="1"
-		title="There must be at least 1 pieces"
-		required
-		bind:value={quantity}
-	/>
+	<input type="number" name="quantity" placeholder="1" min="1" required value={quantity} />
 	<label for="note">Note</label>
-	<input type="text" name="note" placeholder="Note for this item" bind:value={note} />
+	<input type="text" name="note" placeholder="Note for this item" value={note} />
 
 	<button type="submit" disabled={!valid}>Add Item</button>
-
 </form>
 
 <style>
