@@ -26,10 +26,8 @@
 	</div>
 </div>
 <Modal
-	title="Alert!"
-	message={`You are deleting item "${
-		shopping_list[deleteIndex] ? shopping_list[deleteIndex].item : ''
-	}". Are you sure?`}
+	title="Are you sure?"
+	message={`You are deleting item <strong style="color: red">${shopping_list[deleteIndex] ? shopping_list[deleteIndex].item : ''}</strong>. This operation cannot be undone.`}
 	on:modalconfirmed={() => {
 		dispatch('deleteitem', deleteIndex);
 		deleteIndex = 0;
@@ -45,6 +43,7 @@
 		width: 100%;
 		text-align: center;
 		font-size: 4vw;
+		font-weight: 600;
 	}
 
 	#wrapper {
@@ -79,6 +78,5 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		border-radius: 2vh;
 	}
 </style>
