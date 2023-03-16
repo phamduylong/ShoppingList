@@ -1,6 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	import { modalOpen } from './stores';
+	import { modalOpen } from './modalStores';
 	export let title;
 	export let message;
 	const dispatch = createEventDispatcher();

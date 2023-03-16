@@ -3,7 +3,7 @@
 	import Item from './Item.svelte';
 	let dispatch = createEventDispatcher();
 	import Modal from './Modal.svelte';
-	import { modalOpen } from './stores';
+	import { modalOpen } from './modalStores';
 	export let shopping_list = [];
 	let deleteIndex = 0;
 
