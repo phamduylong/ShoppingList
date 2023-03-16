@@ -15,7 +15,7 @@
 	<div role="dialog" class="modal">
 		<div class="contents">
 			<h2>{title}</h2>
-			<p>{message}</p>
+			<p>{@html message}</p>
 			<div class="actions">
 				<button on:click={acceptModal}>Yes</button>
 				<button
