@@ -4,7 +4,7 @@
 	let item = '',
 		note = '',
 		quantity = 1;
-	$: valid = item !== '' && !isNaN(Number(quantity)) && quantity > 0;
+	$: validInput = item !== ''  && quantity > 0;
 
 	function emitAddItem() {
 		const new_item = {
@@ -20,22 +20,15 @@
 	}
 </script>
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-<link
-	rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
-
 <form on:submit|preventDefault={emitAddItem}>
 	<h2><b>Add New Item</b></h2>
 	<label for="item" class="required">Item</label>
-	<input type="text" name="item" placeholder="Item" required value={item} />
+	<input type="text" name="item" placeholder="Item" required bind:value={item} />
 	<label for="quantity" class="required">Quantity</label><br />
-	<input type="number" name="quantity" placeholder="1" min="1" required value={quantity} />
+	<input type="number" name="quantity" min="1" required bind:value={quantity} />
 	<label for="note">Note</label>
-	<input type="text" name="note" placeholder="Note for this item" value={note} />
-
-	<button type="submit" disabled={!valid}>Add Item</button>
+	<input type="text" name="note" placeholder="Note for this item" bind:value={note} />
+	<button type="submit" disabled={!validInput}>Add Item</button>
 </form>
 
 <style>
@@ -51,7 +44,7 @@
 
 	form {
 		position: absolute;
-		top: 70%;
+		top: 75%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		padding: 0 5vw;
