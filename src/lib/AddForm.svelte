@@ -20,7 +20,7 @@
 	}
 </script>
 
-<form on:submit|preventDefault={emitAddItem}>
+<form autocomplete="off" on:submit|preventDefault={emitAddItem}>
 	<h2><b>Add New Item</b></h2>
 	<label for="item" class="required">Item</label>
 	<input type="text" name="item" placeholder="Item" required bind:value={item} />
