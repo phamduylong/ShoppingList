@@ -1,6 +1,6 @@
-<script>
+<script module lang="ts">
 	import { fade, fly } from 'svelte/transition';
-	export let item = { item: '', quantity: 1, note: '' };
+	export let item : {item: string, quantity: number, note?: string} = { item: '', quantity: 1, note: '' };
 </script>
 
 

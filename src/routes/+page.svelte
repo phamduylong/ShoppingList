@@ -1,22 +1,22 @@
-<script>
+<script module lang="ts">
 	import { onMount } from 'svelte';
 	import AddForm from '../lib/AddForm.svelte';
 	import ShoppingList from '../lib/ShoppingList.svelte';
 	import SvelteSeo from "svelte-seo";
-	let shopping_list = [];
+	let shopping_list: {item: string, quantity: number, note?: string}[] = [];
 
-	onMount(() => {
+	onMount(() : void => {
 		if (typeof localStorage !== undefined)
 			shopping_list = JSON.parse(localStorage.getItem('shopping_list')) || [];
 	});
 
-	function addItem(e) {
+	function addItem(e : {detail: {item: string, quantity: number, note?: string}}) : void {
 		const new_item = e.detail;
 		shopping_list = [...shopping_list, new_item];
 		localStorage.setItem('shopping_list', JSON.stringify(shopping_list));
 	}
 
-	function removeCompleted(e) {
+	function removeCompleted(e : {detail: number}) : void {
 		const del_index = e.detail;
 		shopping_list.splice(del_index, 1);
 		shopping_list = shopping_list;
@@ -30,7 +30,6 @@
 		description: "A To-Buy List Webpage",
 		type: "website",
 		url: "https://shopping-list-pi-three.vercel.app"
-
 	}}
 />
 

@@ -1,13 +1,13 @@
-<script>
+<script module lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	import Item from './Item.svelte';
 	let dispatch = createEventDispatcher();
 	import Modal from './Modal.svelte';
 	import { modalOpen } from './modalStores';
-	export let shopping_list = [];
-	let deleteIndex = 0;
+	export let shopping_list : {item: string, quantity: number, note?: string}[] = [];;
+	let deleteIndex : number = 0;
 
-	function openModal(index) {
+	function openModal (index : number) : void {
 		deleteIndex = index;
 		modalOpen.open();
 	}

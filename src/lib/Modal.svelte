@@ -1,11 +1,11 @@
-<script>
+<script module lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	import { modalOpen } from './modalStores';
-	export let title;
-	export let message;
+	export let title : string = "Alert";
+	export let message : string = "Are you sure?";
 	const dispatch = createEventDispatcher();
 
-	function acceptModal() {
+	function acceptModal() : void {
 		dispatch('modalconfirmed');
 		modalOpen.close();
 	}

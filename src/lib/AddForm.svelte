@@ -1,13 +1,13 @@
-<script>
+<script module lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	let dispatch = createEventDispatcher();
-	let item = '',
-		note = '',
-		quantity = 1;
-	$: validInput = item !== ''  && quantity > 0;
+	let item : string = '',
+		note : string = '',
+		quantity : number = 1;
+	$: validInput = (item !== ''  && quantity > 0);
 
-	function emitAddItem() {
-		const new_item = {
+	function emitAddItem() : void {
+		const new_item : {item: string, quantity: number, note?: string} = {
 			item,
 			quantity,
 			note
