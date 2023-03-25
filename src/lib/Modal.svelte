@@ -1,4 +1,4 @@
-<script module lang="ts">
+<script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	import { modalOpen } from './modalStores';
 	export let title : string = "Alert";

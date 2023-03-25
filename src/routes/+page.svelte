@@ -1,4 +1,4 @@
-<script module lang="ts">
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import AddForm from '../lib/AddForm.svelte';
 	import ShoppingList from '../lib/ShoppingList.svelte';
