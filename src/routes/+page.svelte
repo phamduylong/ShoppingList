@@ -1,16 +1,17 @@
 <script lang="ts">
+	import type { Item, ShoppingListType } from '../lib/types';
 	import { onMount } from 'svelte';
 	import AddForm from '../lib/AddForm.svelte';
 	import ShoppingList from '../lib/ShoppingList.svelte';
 	import SvelteSeo from "svelte-seo";
-	let shopping_list: {item: string, quantity: number, note?: string}[] = [];
+	let shopping_list: ShoppingListType = [];
 
 	onMount(() : void => {
 		if (typeof localStorage !== undefined)
 			shopping_list = JSON.parse(localStorage.getItem('shopping_list')) || [];
 	});
 
-	function addItem(e : {detail: {item: string, quantity: number, note?: string}}) : void {
+	function addItem(e : {detail: Item}) : void {
 		const new_item = e.detail;
 		shopping_list = [...shopping_list, new_item];
 		localStorage.setItem('shopping_list', JSON.stringify(shopping_list));

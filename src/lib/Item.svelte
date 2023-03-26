@@ -1,6 +1,7 @@
 <script lang="ts">
+	import type { Item } from './types';
 	import { fade, fly } from 'svelte/transition';
-	export let item : {item: string, quantity: number, note?: string} = { item: '', quantity: 1, note: '' };
+	export let item : Item = { item: '', quantity: 1, note: '' };
 </script>
 
 
