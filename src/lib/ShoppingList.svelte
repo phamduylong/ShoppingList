@@ -67,7 +67,7 @@
 		top: 5%;
 		transform: translate(-50%, -50%);
 		font-family: 'Courier New', sans-serif;
-		font-size: 3vw;
+		font-size: 2vw;
 		margin-bottom: 5%;
 	}
 
@@ -79,5 +79,16 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
+	}
+
+	@media screen and (min-width: 768px) {
+		#wrapper {
+			width: 80%;
+		}
+
+		h1 {
+			font-size: 3vw;
+			width: 75%;
+		}
 	}
 </style>
