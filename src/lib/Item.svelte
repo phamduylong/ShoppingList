@@ -32,8 +32,7 @@
 		border-radius: 5px;
 		border: black solid 1.5px;
 		padding: 0.5em;
-		margin: 0.5%;
-		
+		margin: 0.5%;	
 	}
 
 	.item-content {
@@ -41,7 +40,7 @@
 		height: 100%;
 		width: 95%;
 		margin:1%;
-		font-size: 2vw;
+		font-size: 1.25vw;
 	}
 
 	button {
@@ -52,5 +51,11 @@
 		background-color: orange;
 		border: none;
 		margin-left: 2%;
+	}
+
+	@media screen and (max-width: 768px) {
+		.item-content {
+			font-size: 2.5vw;
+		}
 	}
 </style>
