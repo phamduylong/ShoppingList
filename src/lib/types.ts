@@ -4,6 +4,8 @@ type Item = {
     note?: string
 };
 
+type EventData<T> = { detail: T };
+
 type ShoppingListType = Item[];
 
-export { Item, ShoppingListType };
+export { Item, ShoppingListType, EventData };
