@@ -52,7 +52,7 @@
 		box-sizing: border-box;
 		margin-top: 5%;
 		margin-bottom: 5%;
-		max-width: 50%;
+		max-width: 40%;
 		max-height: 20%;
 	}
 
@@ -108,12 +108,15 @@
 		color: #666666;
 	}
 
-	@media only screen and (orientation: portrait) and (max-width: 600px) {
+	@media only screen and (orientation: portrait) and (max-width: 768px) {
 		label {
 			font-size: 2vw;
 		}
 		input {
-			font-size: 1.75 !important;
+			font-size: 1.75vw !important;
+		}
+		form {
+			max-width: 60%;
 		}
 	}
 </style>
