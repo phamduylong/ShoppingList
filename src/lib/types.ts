@@ -1,9 +1,11 @@
-type Item = {
+type ItemType = {
     item: string,
     quantity: number,
     note?: string
 };
 
-type ShoppingListType = Item[];
+type EventData<T> = { detail: T };
 
-export { Item, ShoppingListType };
+type ShoppingListType = ItemType[];
+
+export { ItemType, ShoppingListType, EventData };
