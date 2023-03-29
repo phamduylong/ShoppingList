@@ -1,4 +1,4 @@
-type Item = {
+type ItemType = {
     item: string,
     quantity: number,
     note?: string
@@ -6,6 +6,6 @@ type Item = {
 
 type EventData<T> = { detail: T };
 
-type ShoppingListType = Item[];
+type ShoppingListType = ItemType[];
 
-export { Item, ShoppingListType, EventData };
+export { ItemType, ShoppingListType, EventData };

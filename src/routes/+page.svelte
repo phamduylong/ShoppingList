@@ -1,10 +1,9 @@
 <script lang="ts">
-	import type { Item, ShoppingListType, EventData } from '../lib/types';
+	import type { ItemType, ShoppingListType, EventData } from '../lib/types';
 	import { onMount } from 'svelte';
 	import AddForm from '../lib/AddForm.svelte';
 	import ShoppingList from '../lib/ShoppingList.svelte';
 	import SvelteSeo from "svelte-seo";
-	import Item from '../lib/Item.svelte';
 	let shopping_list: ShoppingListType = [];
 
 	onMount(() : void => {
@@ -12,14 +11,14 @@
 			shopping_list = JSON.parse(localStorage.getItem('shopping_list')) || [];
 	});
 
-	function addItem(e : EventData<Item>) : void {
-		const new_item = e.detail;
+	function addItem(e : EventData<ItemType>) : void {
+		const new_item : ItemType = e.detail;
 		shopping_list = [...shopping_list, new_item];
 		localStorage.setItem('shopping_list', JSON.stringify(shopping_list));
 	}
 
 	function removeCompleted(e : EventData<number>) : void {
-		const del_index = e.detail;
+		const del_index : number = e.detail;
 		shopping_list.splice(del_index, 1);
 		shopping_list = shopping_list;
 		localStorage.setItem('shopping_list', JSON.stringify(shopping_list));
