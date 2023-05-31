@@ -14,16 +14,18 @@
 {#if $modalOpen}
 	<div role="dialog" class="modal">
 		<div class="contents">
-			<h2>{title}</h2>
-			<p>{@html message}</p>
+			<h2 class="text-xl lg:text-xl">{title}</h2>
+			<p id="modalContent" class="text-base lg:text-lg">{@html message}</p>
 			<div class="actions">
-				<button on:click={acceptModal}>Yes</button>
-				<button
+				<button class="text-base lg:text-lg" 
+					on:click={acceptModal}>Yes</button
+				>
+				<button class="text-base lg:text-lg"
 					on:click={() => {
 						modalOpen.close();
 					}}>No</button
 				>
-				<button
+				<button class="text-base lg:text-lg"
 					on:click={() => {
 						modalOpen.close();
 					}}>Cancel</button
@@ -60,10 +62,9 @@
 
 	h2 {
 		text-align: center;
-		font-size: 12px;
 	}
 
-	p {
+	#modalContent {
 		text-align: center;
 		margin-top: 8px;
 	}
