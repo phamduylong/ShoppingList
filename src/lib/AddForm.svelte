@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ItemType } from './types';
+	import type { Item } from './types';
 	import { createEventDispatcher } from 'svelte';
 	let dispatch = createEventDispatcher();
 	let item : string = '',
@@ -9,7 +9,7 @@
 	$: inputIsInvalid = (item === null || item === "" || quantity <= 0);
 
 	function emitAddItem() : void {
-		const new_item : ItemType = {
+		const new_item : Item = {
 			item,
 			quantity,
 			note

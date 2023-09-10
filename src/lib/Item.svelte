@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { ItemType } from './types';
+	import type { Item } from './types';
 	import { fade, fly } from 'svelte/transition';
-	export let item : ItemType = { item: '', quantity: 1, note: '' };
+	export let item : Item = { item: '', quantity: 1, note: '' };
 </script>
 
 

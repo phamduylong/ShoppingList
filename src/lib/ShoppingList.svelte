@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { ShoppingListType } from './types';
+	import type { ShoppingList } from './types';
 	import { createEventDispatcher } from 'svelte';
 	import Item from './Item.svelte';
 	let dispatch = createEventDispatcher();
 	import Modal from './Modal.svelte';
 	import { modalOpen } from './modalStores';
-	export let shopping_list : ShoppingListType = [];;
+	export let shopping_list : ShoppingList = [];;
 	let deleteIndex : number = 0;
 
 	function openModal (index : number) : void {
