@@ -49,7 +49,8 @@
 	}
 
 	.contents {
-		min-width: 60%;
+		max-width: 50%;
+		min-width: 25%;
 		border-radius: 6px;
 		padding: 8px;
 		background: white;
