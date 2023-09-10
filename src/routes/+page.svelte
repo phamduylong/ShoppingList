@@ -1,18 +1,18 @@
 <script lang="ts">
-	import type { ItemType, ShoppingListType, EventData } from '../lib/types';
+	import type { Item, ShoppingList, EventData } from '../lib/types';
 	import { onMount } from 'svelte';
 	import AddForm from '../lib/AddForm.svelte';
-	import ShoppingList from '../lib/ShoppingList.svelte';
+	import Cart from '../lib/Cart.svelte';
 	import SvelteSeo from "svelte-seo";
-	let shopping_list: ShoppingListType = [];
+	let shopping_list: ShoppingList = [];
 
 	onMount(() : void => {
 		if (typeof localStorage !== undefined)
 			shopping_list = JSON.parse(localStorage.getItem('shopping_list')) || [];
 	});
 
-	function addItem(e : EventData<ItemType>) : void {
-		const new_item : ItemType = e.detail;
+	function addItem(e : EventData<Item>) : void {
+		const new_item : Item = e.detail;
 		shopping_list = [...shopping_list, new_item];
 		localStorage.setItem('shopping_list', JSON.stringify(shopping_list));
 	}
@@ -41,7 +41,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <body>
-	<ShoppingList {shopping_list} on:deleteitem={(e) => removeCompleted(e)} />
+	<Cart {shopping_list} on:deleteitem={(e) => removeCompleted(e)} />
 	<AddForm on:additem={(e) => addItem(e)} />
 </body>
 
