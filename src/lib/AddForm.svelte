@@ -5,7 +5,8 @@
 	let item : string = '',
 		note : string = '',
 		quantity : number = 1;
-	$: validInput = (item !== ''  && quantity > 0);
+	let inputIsInvalid : boolean = true;
+	$: inputIsInvalid = (item === null || item === "" || quantity <= 0);
 
 	function emitAddItem() : void {
 		const new_item : ItemType = {
@@ -29,7 +30,7 @@
 	<input type="number" name="quantity" min="1" required bind:value={quantity} />
 	<label for="note">Note</label>
 	<input type="text" name="note" placeholder="Note for this item" bind:value={note} />
-	<button type="submit" disabled={!validInput}>Add Item</button>
+	<button type="submit" disabled={inputIsInvalid}>Add Item</button>
 </form>
 
 <style>
@@ -38,7 +39,7 @@
 		left: 50%;
 		top: -25%;
 		transform: translate(-50%, -50%);
-		margin-bottom: 3vw;
+		margin-bottom: 6vw;
 		font-family: 'Courier New', sans-serif;
 		font-size: 2vw;
 	}
@@ -95,7 +96,7 @@
 		font-weight: 700;
 		cursor: pointer;
 		outline: none;
-		margin-top: 3vw;
+		margin-top: 6vw;
 		margin-bottom: 2vw;
 		position: relative;
 		left: 50%;
@@ -106,6 +107,18 @@
 	button[disabled] {
 		background-color: #cccccc;
 		color: #666666;
+	}
+
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type=number] {
+		-moz-appearance: textfield;
 	}
 
 	@media only screen and (orientation: portrait) and (max-width: 768px) {
